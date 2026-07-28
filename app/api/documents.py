@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from app.db.models import Document
+from app.core.chunking import chunk_text
+from app.db.models import Chunk, Document
 from app.db.schemas import DocumentCreate, DocumentResponse, DocumentUpdate
 from app.db.session import get_db
 
@@ -11,6 +12,11 @@ router = APIRouter(prefix = "/documents", tags = ["documents"])
 def create_document(payload: DocumentCreate, db: Session = Depends(get_db)):
     doc = Document(title = payload.title, content = payload.content)
     db.add(doc)
+    db.flush()
+
+    for piece in chunk_text(payload.content):
+        db.add(Chunk(document_id = doc.id, chunk_text = piece))
+
     db.commit()
     db.refresh(doc)
     return doc
@@ -33,6 +39,11 @@ def update_document(doc_id: int, payload: DocumentUpdate, db: Session = Depends(
         raise HTTPException(status_code=404, detail = "Document not found")
     doc.title = payload.title
     doc.content = payload.content
+
+    db.query(Chunk).filter(Chunk.document_id == doc.id).delete()
+    for piece in chunk_text(payload.content):
+        db.add(Chunk(document_id = doc.id, chunk_text = piece))
+
     db.commit()
     db.refresh(doc)
     return doc
