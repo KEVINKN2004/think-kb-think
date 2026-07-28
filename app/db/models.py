@@ -1,0 +1,25 @@
+from datetime import datetime, timezone
+from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
+from pgvector.sqlalchemy import Vector
+from app.db.session import Base
+
+class Document(Base):
+    __tablename__ = "documents"
+
+    id = Column(Integer, primary_key = True, index = True)
+    title = Column(String(255), nullable = False)
+    content = Column(Text, nullable = False)
+    created_at = Column(DateTime, default = lambda: datetime.now(timezone.utc))
+
+    chunks = relationship("Chunk", back_populates = "document", cascade = "all, delete-orphan")
+
+class Chunk(Base):
+    __tablename__ = "chunks"
+
+    id = Column(Integer, primary_key = True, index = True)
+    document_id = Column(Integer, ForeignKey("documents.id"), nullable = False)
+    chunk_text = Column(Text, nullable = False)
+    embedding = Column(Vector(1536), nullable = True)
+
+    document = relationship("Document", back_populates = "chunks")
