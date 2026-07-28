@@ -1,8 +1,11 @@
 from datetime import datetime, timezone
-from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey
-from sqlalchemy.orm import relationship
+
 from pgvector.sqlalchemy import Vector
+from sqlalchemy import Column, DateTime, ForeignKey, Integer, String, Text
+from sqlalchemy.orm import relationship
+
 from app.db.session import Base
+
 
 class Document(Base):
     __tablename__ = "documents"

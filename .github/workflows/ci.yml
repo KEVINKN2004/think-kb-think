@@ -1,15 +1,39 @@
-name: Continuous Integration
+name: CI
 
 on: [push, pull_request]
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: kbuser
+          POSTGRES_PASSWORD: kbpass
+          POSTGRES_DB: kbdb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgresql://kbuser:kbpass@localhost:5432/kbdb
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.14"
       - run: pip install -r requirements.txt
+      - name: Enable pgvector and create test DB
+        run: |
+          PGPASSWORD=kbpass psql -h localhost -U kbuser -d kbdb -c "CREATE EXTENSION IF NOT EXISTS vector;"
+          PGPASSWORD=kbpass psql -h localhost -U kbuser -d kbdb -c "CREATE DATABASE kbdb_test;"
+          PGPASSWORD=kbpass psql -h localhost -U kbuser -d kbdb_test -c "CREATE EXTENSION IF NOT EXISTS vector;"
       - run: ruff check .
       - run: pytest

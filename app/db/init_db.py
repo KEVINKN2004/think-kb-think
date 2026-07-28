@@ -1,5 +1,5 @@
-from app.db.session import engine, Base
-from app.db import models
+from app.db.session import Base, engine
+
 
 def init():
     Base.metadata.create_all(bind = engine)
