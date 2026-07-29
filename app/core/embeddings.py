@@ -18,15 +18,15 @@ class LocalEmbeddingProvider:
     column_name = "embedding_local"
 
     def __init__(self) -> None:
-        self.model = None
+        self._model = None
 
     @property
     def model(self):
-        if self.model is None:
+        if self._model is None:
             from sentence_transformers import SentenceTransformer
 
-            self.model = SentenceTransformer("all-MinLM-L6-v2")
-        return self.model
+            self._model = SentenceTransformer("all-MiniLM-L6-v2")
+        return self._model
 
     def embed(self, texts: list[str]) -> list[list[float]]:
         if not texts:
@@ -77,5 +77,5 @@ class OpenAIEmbeddingProvider:
     def embed(self, texts: list[str]) -> list[list[float]]:
         if not texts:
             return []
-        response = self.client.embeddings.create(model = "text-embedding-3-small", inputs = texts,)
+        response = self.client.embeddings.create(model = "text-embedding-3-small", input = texts,)
         return [item.embedding for item in response.data]
