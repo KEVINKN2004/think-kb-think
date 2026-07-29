@@ -7,4 +7,8 @@ class Settings(BaseSettings):
     embedding_provider: str = "local"
     openai_api_key: str = ""
 
+    anthropic_api_key: str = ""
+    generation_model: str = "claude-sonnet-4-6"
+    min_similarity_threshold: float = 0.3
+
 settings = Settings()

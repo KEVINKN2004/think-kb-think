@@ -34,3 +34,12 @@ class SearchResult(BaseModel):
 class SearchResponse(BaseModel):
     question: str
     results: list[SearchResult]
+
+class AskRequest(BaseModel):
+    question: str = Field(max_length = 1000)
+    top_k: int = Field(default = 5, ge = 1, le = 10)
+
+class AskResponse(BaseModel):
+    question: str
+    answer: str
+    sources: list[SearchResult]
