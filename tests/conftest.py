@@ -4,6 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from app.config import settings
+from app.core.embeddings import MockEmbeddingProvider, get_provider
 from app.db.session import Base, get_db
 from app.main import app
 
@@ -31,5 +32,6 @@ def client(db_session):
             pass
 
     app.dependency_overrides[get_db] = override_get_db
+    app.dependency_overrides[get_provider] = lambda: MockEmbeddingProvider()
     yield TestClient(app)
     app.dependency_overrides.clear()

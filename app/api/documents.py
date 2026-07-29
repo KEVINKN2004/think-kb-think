@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 from app.core.chunking import chunk_text
+from app.core.embeddings import EmbeddingProvider, get_provider
 from app.db.models import Chunk, Document
 from app.db.schemas import DocumentCreate, DocumentResponse, DocumentUpdate
 from app.db.session import get_db
@@ -9,13 +10,18 @@ from app.db.session import get_db
 router = APIRouter(prefix = "/documents", tags = ["documents"])
 
 @router.post("", response_model = DocumentResponse, status_code = status.HTTP_201_CREATED)
-def create_document(payload: DocumentCreate, db: Session = Depends(get_db)):
+def create_document(payload: DocumentCreate, db: Session = Depends(get_db), embedder: EmbeddingProvider = Depends(get_provider)):
     doc = Document(title = payload.title, content = payload.content)
     db.add(doc)
     db.flush()
 
-    for piece in chunk_text(payload.content):
-        db.add(Chunk(document_id = doc.id, chunk_text = piece))
+    pieces = chunk_text(payload.content)
+    vectors = embedder.embed(pieces)
+
+    for piece, vector in zip(pieces, vectors):
+        chunk = Chunk(document_id = doc.id, chunk_text = piece)
+        setattr(chunk, embedder.column_name, vector)
+        db.add(chunk)
 
     db.commit()
     db.refresh(doc)
@@ -33,7 +39,7 @@ def get_document(doc_id: int, db: Session = Depends(get_db)):
     return doc
 
 @router.put("/{doc_id}", response_model = DocumentResponse)
-def update_document(doc_id: int, payload: DocumentUpdate, db: Session = Depends(get_db)):
+def update_document(doc_id: int, payload: DocumentUpdate, db: Session = Depends(get_db), embedder: EmbeddingProvider = Depends(get_provider)):
     doc = db.query(Document).filter(Document.id == doc_id).first()
     if doc is None:
         raise HTTPException(status_code=404, detail = "Document not found")
@@ -41,8 +47,14 @@ def update_document(doc_id: int, payload: DocumentUpdate, db: Session = Depends(
     doc.content = payload.content
 
     db.query(Chunk).filter(Chunk.document_id == doc.id).delete()
-    for piece in chunk_text(payload.content):
-        db.add(Chunk(document_id = doc.id, chunk_text = piece))
+
+    pieces = chunk_text(payload.content)
+    vectors = embedder.embed(pieces)
+
+    for piece, vector in zip(pieces, vectors):
+        chunk = Chunk(document_id = doc.id, chunk_text = piece)
+        setattr(chunk, embedder.column_name, vector)
+        db.add(chunk)
 
     db.commit()
     db.refresh(doc)
