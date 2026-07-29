@@ -1,3 +1,5 @@
+import hashlib
+import math
 from typing import Protocol
 
 from app.config import settings
@@ -53,11 +55,15 @@ class MockEmbeddingProvider:
     dimensions = 384
     column_name = "embedding_local"
 
-    def embed(self, texts: list[str]) -> list[list[str]]:
+    def embed(self, texts: list[str]) -> list[list[float]]:
         vectors = []
         for text in texts:
-            seed = (sum(ord(c) for c in text) % 97) / 97.0
-            vectors.append([seed] * self.dimensions)
+            vector = [0.0] * self.dimensions
+            for word in text.lower().split():
+                index = int(hashlib.md5(word.encode()).hexdigest(), 16) % self.dimensions
+                vector[index] += 1.0
+            norm = math.sqrt(sum(v * v for v in vector)) or 1.0
+            vectors.append([v / norm for v in vector])
         return vectors
 
 class OpenAIEmbeddingProvider:

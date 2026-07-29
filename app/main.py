@@ -1,9 +1,10 @@
 from fastapi import FastAPI
 
-from app.api import documents
+from app.api import documents, search
 
 app = FastAPI(title="Knowledge Base Assistant")
 app.include_router(documents.router)
+app.include_router(search.router)
 
 @app.get("/")
 def root():
