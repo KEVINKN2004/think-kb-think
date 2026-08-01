@@ -56,14 +56,20 @@ def build_prompt(question: str, chunks: list[RetrievedChunk]) -> str:
         "Answer using only the sources above, citing them by number."
     )
 
+class GenerationUnavailable(Exception):
+    """Raised when the LLM provider cannot be reached."""
+
 def generate_answer(
     question: str,
     chunks: list[RetrievedChunk],
     llm: LLMClient | None = None,
 ) -> GeneratedAnswer:
     if not chunks:
-        return GeneratedAnswer(answer=NO_ANSWER, sources=[])
+        return GeneratedAnswer(answer = NO_ANSWER, sources = [])
 
     client = llm or get_llm()
-    answer = client.complete(build_prompt(question, chunks))
+    try:
+        answer = client.complete(build_prompt(question, chunks))
+    except Exception as exc:
+        raise GenerationUnavailable(str(exc)) from exc
     return GeneratedAnswer(answer = answer, sources = chunks)
