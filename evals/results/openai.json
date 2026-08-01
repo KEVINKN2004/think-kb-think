@@ -1,0 +1,889 @@
+{
+  "summary": {
+    "provider": "openai",
+    "model": "claude-sonnet-4-6",
+    "threshold": 0.15,
+    "timestamp": "2026-07-30T02:33:03.120334+00:00",
+    "num_cases": 47,
+    "hit_rate_at_5": 1.0,
+    "mrr": 1.0,
+    "fact_coverage": 0.976,
+    "citation_rate": 1.0,
+    "correct_refusals": 6,
+    "total_unanswerable": 6,
+    "false_refusals": 0
+  },
+  "cases": [
+    {
+      "question": "What percentage of users saying they'd be very disappointed indicates product/market fit?",
+      "expected_document": "idea_validation",
+      "retrieved": [
+        "idea_validation",
+        "idea_validation",
+        "idea_validation",
+        "fundraising_stages",
+        "idea_validation"
+      ],
+      "top_similarity": 0.651,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "According to the sources, if at least **40 percent** of active users say they would be \"very disappointed\" if they could no longer use the product, that is generally treated as a signal of product/market fit. Below roughly **25 percent**, you almost certainly have not found product/market fit. This is known as the Sean Ellis test [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "How many customer interviews should I do before drawing conclusions?",
+      "expected_document": "idea_validation",
+      "retrieved": [
+        "idea_validation",
+        "idea_validation",
+        "idea_validation",
+        "idea_validation",
+        "early_gtm"
+      ],
+      "top_similarity": 0.552,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, you should aim for **10 to 20 interviews** with people in a single, narrowly defined segment before drawing conclusions. Fewer than that means you are \"pattern-matching on noise.\" [2][4]\n\nIt's also important to keep those interviews within one segment \u2014 interviewing across many unrelated segments produces contradictory feedback that is impossible to act on. [4]",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "Why are waitlist signups a weak signal of demand?",
+      "expected_document": "idea_validation",
+      "retrieved": [
+        "idea_validation",
+        "idea_validation",
+        "idea_validation",
+        "early_gtm",
+        "hiring_process"
+      ],
+      "top_similarity": 0.449,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Waitlist signups are a weak signal of demand because an email address costs nothing to give. As a result, waitlists measure the appeal of your landing page copy, not actual demand for your product [3].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What's the difference between problem/solution fit and product/market fit?",
+      "expected_document": "idea_validation",
+      "retrieved": [
+        "idea_validation",
+        "idea_validation",
+        "early_gtm",
+        "market_sizing",
+        "early_gtm"
+      ],
+      "top_similarity": 0.571,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources provided:\n\n**Problem/solution fit** means you have confirmed that a real, recurring, painful problem exists and that your proposed approach plausibly addresses it. Importantly, this milestone can be reached **before writing any code** [1].\n\n**Product/market fit** is a later milestone that requires actually shipping a product. The signs of product/market fit are: usage grows without heavy promotion, churn is low, and customers complain when the product breaks [1][2].\n\nA common quantitative way to measure product/market fit is the **Sean Ellis test**: survey active users and ask how they would feel if they could no longer use the product. If at least **40% answer \"very disappointed,\"** that's generally considered a signal of product/market fit. Below roughly **25%**, you almost certainly have not achieved it [2].\n\nIn short, problem/solution fit is about validating the *problem* early on, while product/market fit is about validating that your *shipped product* is genuinely wanted by the market.",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What segment should I do the interviews in before deciding on what problem to solve?",
+      "expected_document": "idea_validation",
+      "retrieved": [
+        "idea_validation",
+        "idea_validation",
+        "idea_validation",
+        "idea_validation",
+        "hiring_process"
+      ],
+      "top_similarity": 0.555,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources provided, you should conduct interviews within **one narrow, single customer segment** before drawing conclusions.\n\nSpecifically [2][3]:\n- Aim for **10 to 20 interviews** with people in a **single, narrowly defined segment**.\n- Fewer than that and you risk pattern-matching on noise.\n- Interviewing across **many unrelated segments** produces contradictory feedback that is impossible to act on.\n\nThe sources don't specify *which* segment to choose, only that you should pick **one narrow segment** and stick to it before broadening your scope [1][2].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What do TAM, SAM, and SOM stand for?",
+      "expected_document": "market_sizing",
+      "retrieved": [
+        "market_sizing",
+        "market_sizing",
+        "market_sizing",
+        "market_sizing",
+        "market_sizing"
+      ],
+      "top_similarity": 0.62,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources provided:\n\n- **TAM** stands for **Total Addressable Market** \u2014 the total annual revenue available if you captured 100 percent of demand for your category, globally, with no constraints. [2]\n\n- **SAM** stands for **Serviceable Addressable Market** \u2014 the portion of TAM your product could actually serve given your current model, including constraints like geography, language, regulatory environment, and customer size. [1][2]\n\n- **SOM** stands for **Serviceable Obtainable Market** \u2014 the share of SAM you could realistically win in a defined period (usually three to five years), given competition and your own capacity to sell and deliver. [1]\n\nAs a useful shorthand: \"TAM is the category, SAM is the segment you can serve, SOM is what you can win.\" [1]",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "How do I calculate market size bottom-up?",
+      "expected_document": "market_sizing",
+      "retrieved": [
+        "market_sizing",
+        "market_sizing",
+        "market_sizing",
+        "market_sizing",
+        "market_sizing"
+      ],
+      "top_similarity": 0.668,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "## Bottom-Up Market Size Calculation\n\nThe basic formula for bottom-up market sizing is [4]:\n\n> **Number of potential customers \u00d7 average annual revenue per customer = market size**\n\n### Steps to apply it:\n\n1. **Identify your potential customer count** \u2013 Find the specific number of customers your product could serve within your defined segment [1].\n2. **Determine your average annual revenue per customer** \u2013 This is typically your annual contract value or pricing per customer [1].\n3. **Multiply the two figures** together to get your SAM (Serviceable Addressable Market) [1].\n\n### Example:\nA scheduling software sold to independent U.S. dental practices would look like this [1]:\n- ~130,000 potential practices\n- \u00d7 $2,400 annual contract value\n- = **~$312 million SAM**\n\n### Why bottom-up is preferred:\n\nInvestors strongly prefer this method because every input is **inspectable and defensible** \u2014 you can argue the customer count and price point separately [1]. It also forces founders to have clear pricing in place [1].\n\nBottom-up should be your **primary estimate**, with top-down analysis used only as a sanity check [2].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "How large does a TAM need to be for venture funding?",
+      "expected_document": "market_sizing",
+      "retrieved": [
+        "market_sizing",
+        "market_sizing",
+        "market_sizing",
+        "fundraising_stages",
+        "market_sizing"
+      ],
+      "top_similarity": 0.761,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, venture investors typically want to believe the TAM can support a **$1 billion or larger business**, which in practice means a TAM of **at least $1 billion and often several billion** [1][3].\n\nTo illustrate why: a company addressing a $50 million market is generally not venture-fundable, because even total dominance of that market would not produce a fund-returning outcome [1]. This is because venture capital math requires the possibility of very large outcomes, as most investments return nothing and a fund needs individual companies capable of returning the entire fund [3].\n\nFounders in genuinely small markets are typically better served by alternative financing such as bootstrapping, revenue-based financing, or debt [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "Why is saying we only need one percent of the market a red flag?",
+      "expected_document": "market_sizing",
+      "retrieved": [
+        "market_sizing",
+        "market_sizing",
+        "market_sizing",
+        "idea_validation",
+        "market_sizing"
+      ],
+      "top_similarity": 0.472,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Saying \"we only need 1 percent of a $50 billion market\" is a red flag because **it asserts a result without explaining how any single customer is acquired** [1]. It is a top-down approach that relies on an arbitrary percentage rather than demonstrating the mechanics of actually winning customers. This makes it a weak justification \u2014 top-down figures should only be used as a sanity check on a bottom-up estimate, never as the primary basis for a market opportunity claim [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What do investors prefer in terms of sizing and why?",
+      "expected_document": "market_sizing",
+      "retrieved": [
+        "market_sizing",
+        "market_sizing",
+        "market_sizing",
+        "fundraising_stages",
+        "fundraising_stages"
+      ],
+      "top_similarity": 0.555,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the provided sources, here is what investors prefer in terms of market sizing:\n\n**Minimum Size Threshold**\nVenture investors typically want to see a TAM (Total Addressable Market) capable of supporting a **$1 billion or larger business**, which generally means a TAM of **at least several billion dollars** [3]. A company addressing a $50 million market is generally not venture-fundable, because even total market dominance would not produce a fund-returning outcome [3].\n\n**Why Size Matters**\nThis preference is driven by venture capital math: most investments return nothing, so a fund needs individual companies capable of **returning the entire fund** [2][3]. It is not a judgment about business quality \u2014 many profitable companies serve small markets \u2014 but rather a statement about fit between a business and the venture financing model [3].\n\n**Growth Rate Matters Too**\nSize alone is insufficient. Investors also weigh **growth rate and timing**. For example, a $2 billion market growing 30% annually is considered more attractive than a $5 billion market shrinking 5% annually, because the former will be larger in five years and incumbents are less entrenched relative to new demand [1].\n\n**\"Why Now\" Matters**\nA credible market-sizing narrative must also explain **why the opportunity is available at this specific moment** \u2014 whether due to a regulation change, cost curve shift, platform shift, or behavioral change \u2014 rather than simply asserting how large the market is [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 0.0
+    },
+    {
+      "question": "What is the standard founder vesting schedule?",
+      "expected_document": "cofounder_decisions",
+      "retrieved": [
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "hiring_process"
+      ],
+      "top_similarity": 0.73,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "The standard founder vesting schedule is **four-year vesting with a one-year cliff** [1]. Under this structure:\n\n- A founder who leaves **before 12 months** receives nothing [1].\n- At the **12-month mark**, 25% of shares vest all at once [1].\n- The remaining **75% vests monthly** over the following 36 months [1].\n\nThis same four-year vesting with one-year cliff structure is also typically used for employee equity grants [5].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "How long do I have to file an 83(b) election?",
+      "expected_document": "cofounder_decisions",
+      "retrieved": [
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "cofounder_decisions"
+      ],
+      "top_similarity": 0.452,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "You have **30 days** from the date of the grant to file an 83(b) election with the IRS. This deadline is strict with no remedy for missing it [1][2].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What's the difference between single-trigger and double-trigger acceleration?",
+      "expected_document": "cofounder_decisions",
+      "retrieved": [
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "fundraising_stages",
+        "idea_validation"
+      ],
+      "top_similarity": 0.409,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources provided:\n\n**Single-trigger acceleration** means vesting accelerates on a change of control alone. The downside is that acquirers generally dislike this arrangement because it removes the retention incentive they are partly paying for. [1][2]\n\n**Double-trigger acceleration** requires two events to occur: a change of control *and* the founder being terminated without cause within a defined window afterward (commonly 12 months). This is considered the more standard and more defensible arrangement. [1]",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What fraction of startup failures involve co-founder conflict?",
+      "expected_document": "cofounder_decisions",
+      "retrieved": [
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "cofounder_decisions"
+      ],
+      "top_similarity": 0.648,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "According to the research by Noam Wasserman published in *The Founder's Dilemmas*, roughly **65 percent** of startup failures involve co-founder conflict rather than product or market failure. [1]",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What should go into a written founder agreement?",
+      "expected_document": "cofounder_decisions",
+      "retrieved": [
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "cofounder_decisions"
+      ],
+      "top_similarity": 0.66,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, a written founder agreement should include the following elements [1]:\n\n- **Equity split and vesting schedule** for each founder\n- **Roles, titles, and decision rights**, including who breaks ties\n- **Expected time commitment**, and whether anyone is part-time\n- **What happens if a founder leaves** voluntarily, is asked to leave, or becomes unable to work\n- **Intellectual property assignment** to the company\n\nThe source also notes that this agreement should be put in writing before significant work begins [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "Why do equal splits or uneven splits?",
+      "expected_document": "cofounder_decisions",
+      "retrieved": [
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "hiring_process",
+        "cofounder_decisions",
+        "hiring_process"
+      ],
+      "top_similarity": 0.469,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, here is why founders choose each type of split:\n\n**Equal Splits (e.g., 50/50)**\nEqual splits are simple, signal mutual respect, and avoid ongoing resentment about a few percentage points. They are common and often the right choice when both founders join at the same time with comparable commitment [2].\n\n**Unequal Splits (e.g., 60/40 or 70/30)**\nUnequal splits reflect real differences in contribution, such as:\n- Who had the original idea\n- Who has been working on it longer\n- Who is taking a larger pay cut\n- Who is full-time versus part-time\n- Who is contributing capital\n- Who holds relevant domain expertise or relationships\n\nAn unequal split is unremarkable when the underlying asymmetry is genuine [1].\n\n**The Most Important Factor**\nRegardless of which approach is chosen, the critical consideration is not the exact ratio but whether **both parties genuinely believe it is fair after honest discussion**. A split that one founder privately resents will surface later, usually at the worst possible moment [1]. Founders should also avoid deferring the conversation, as the longer it waits, the more each founder accumulates a private sense of their own relative contribution [4].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What percentage of dilution is typical in a seed round?",
+      "expected_document": "fundraising_stages",
+      "retrieved": [
+        "fundraising_stages",
+        "fundraising_stages",
+        "hiring_process",
+        "fundraising_stages",
+        "fundraising_stages"
+      ],
+      "top_similarity": 0.667,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources provided, **typical dilution in a seed round is 15 to 25 percent** [1]. This means founders and existing holders collectively give up roughly a fifth of the company. Dilution meaningfully above 25 percent at seed is worth scrutinizing, as it compounds through later rounds and can leave founders with too little ownership to stay motivated through a Series B or C [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "How much do companies typically raise at pre-seed?",
+      "expected_document": "fundraising_stages",
+      "retrieved": [
+        "fundraising_stages",
+        "fundraising_stages",
+        "fundraising_stages",
+        "hiring_process",
+        "fundraising_stages"
+      ],
+      "top_similarity": 0.707,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, companies typically raise **$500,000 to $2 million** at the pre-seed stage. [1]",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What ARR do investors expect at Series A?",
+      "expected_document": "fundraising_stages",
+      "retrieved": [
+        "fundraising_stages",
+        "fundraising_stages",
+        "fundraising_stages",
+        "hiring_process",
+        "fundraising_stages"
+      ],
+      "top_similarity": 0.686,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, a frequently cited benchmark for Series A software companies is roughly **$1 million to $2 million in ARR** with strong growth, though this varies widely by sector and by how efficiently that revenue was acquired. [1][3]\n\nInvestors at Series A also look beyond just ARR, examining retention, gross margin, sales efficiency, and whether growth comes from a repeatable channel rather than founder heroics. [3]",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What's the difference between a SAFE and a convertible note?",
+      "expected_document": "fundraising_stages",
+      "retrieved": [
+        "fundraising_stages",
+        "fundraising_stages",
+        "fundraising_stages",
+        "fundraising_stages",
+        "fundraising_stages"
+      ],
+      "top_similarity": 0.696,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, here are the key differences between a SAFE and a convertible note:\n\n**SAFE (Simple Agreement for Future Equity):**\n- Created by Y Combinator [1]\n- Gives the investor the right to receive equity at a future priced round [1]\n- **Not debt** \u2014 there is no interest rate and no maturity date [1]\n\n**Convertible Note:**\n- Is structured as **debt** that converts to equity [1]\n- Carries an **interest rate** and a **maturity date** [1]\n- The maturity date introduces the possibility of repayment demands if no financing round occurs [1]\n\nBoth instruments share two common key terms: a **valuation cap** (the maximum valuation at which the investment converts, which most affects dilution) and a **discount** (a percentage reduction off the next round's price, commonly 10\u201320%). Where both exist, the investor typically receives whichever is more favorable [2].\n\nIt's also worth noting that since 2018, the standard YC form has been the **post-money SAFE**, which fixes the investor's ownership percentage after the SAFE money is included, making dilution easier to calculate than under the earlier pre-money form [2].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What is the option pool shuffle and why does it matter?",
+      "expected_document": "fundraising_stages",
+      "retrieved": [
+        "fundraising_stages",
+        "fundraising_stages",
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "fundraising_stages"
+      ],
+      "top_similarity": 0.492,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "## The Option Pool Shuffle\n\nThe **option pool shuffle** refers to the practice of creating the employee stock option pool *before* an investment closes, making it a \"pre-money\" pool [1].\n\n### Why It Matters\n\nThe timing of when the option pool is created determines **who bears the dilution**:\n\n- **Pre-money pool (the shuffle):** The dilution falls entirely on existing shareholders \u2014 meaning **founders** absorb the full cost [1].\n- **Post-money pool:** The dilution is shared among everyone, including the new investors [1].\n\nInvestors typically require an option pool of **10 to 20 percent** of the company for future hires [1]. Because of the sizable percentages involved, this single structural choice can shift **several percentage points of ownership**, making it a term worth negotiating explicitly [1].\n\n### The Bigger Picture\n\nThis matters even more when viewed in the context of compounding dilution over time. After multiple rounds and option pool creation, founders commonly hold only **40 to 50 percent** of the company collectively [2]. Understanding and negotiating the timing of the option pool is one way founders can minimize unnecessary ownership loss.",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "How big is a typical employee option pool?",
+      "expected_document": "fundraising_stages",
+      "retrieved": [
+        "fundraising_stages",
+        "hiring_process",
+        "fundraising_stages",
+        "market_sizing",
+        "hiring_process"
+      ],
+      "top_similarity": 0.572,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources provided, investors typically require an employee stock option pool of **10 to 20 percent** of the company to be available for future hires. [1]",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What are the expected growth expectations for enterprise software?",
+      "expected_document": "fundraising_stages",
+      "retrieved": [
+        "fundraising_stages",
+        "revenue_models",
+        "market_sizing",
+        "revenue_models",
+        "fundraising_stages"
+      ],
+      "top_similarity": 0.621,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources provided, a widely referenced growth benchmark for enterprise software is the **\"triple, triple, double, double, double\"** framework [1]. This means:\n\n- **Tripling revenue** in each of the first two years after finding product/market fit\n- **Doubling revenue** for three subsequent years\n\nA company following this path would grow roughly **72x over five years** [1].\n\nHowever, it's important to note that this is described as an **aspirational benchmark** used to illustrate what venture-scale growth looks like, not a strict requirement [1]. Investors also look beyond raw revenue growth at factors such as **retention, gross margin, sales efficiency, and whether growth comes from a repeatable, scalable channel** rather than founder-driven efforts [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What LTV to CAC ratio should a SaaS business target?",
+      "expected_document": "revenue_models",
+      "retrieved": [
+        "revenue_models",
+        "market_sizing",
+        "fundraising_stages",
+        "revenue_models",
+        "market_sizing"
+      ],
+      "top_similarity": 0.654,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources provided, a SaaS business should target an **LTV/CAC ratio of at least 3:1**, meaning the lifetime value of a customer should be roughly three times or more the cost to acquire them. [1]",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What's a typical freemium free-to-paid conversion rate?",
+      "expected_document": "revenue_models",
+      "retrieved": [
+        "revenue_models",
+        "revenue_models",
+        "early_gtm",
+        "revenue_models",
+        "revenue_models"
+      ],
+      "top_similarity": 0.666,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, typical freemium free-to-paid conversion rates are **2 to 5 percent** [2]. This low conversion rate means that freemium models require very large top-of-funnel volume to generate meaningful revenue [2].\n\nFor comparison, free trials (which offer full access for a limited time rather than a permanent free tier) convert significantly better, often at **15 to 25 percent**, though they generate less organic distribution [1][2].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What gross margin should a software company have?",
+      "expected_document": "revenue_models",
+      "retrieved": [
+        "revenue_models",
+        "fundraising_stages",
+        "revenue_models",
+        "revenue_models",
+        "market_sizing"
+      ],
+      "top_similarity": 0.582,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "According to the sources, a software (SaaS) company should have a **gross margin of 70 to 80 percent or higher**. The reasoning is that software should be cheap to deliver at the margin, and materially lower margins suggest heavy infrastructure or hidden services costs [1][3].\n\nBy contrast, services revenue \u2014 such as implementation, training, and consulting \u2014 typically carries much lower gross margins of **20 to 40 percent** and does not scale efficiently [4].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What take rate do marketplaces usually charge?",
+      "expected_document": "revenue_models",
+      "retrieved": [
+        "revenue_models",
+        "revenue_models",
+        "revenue_models",
+        "revenue_models",
+        "early_gtm"
+      ],
+      "top_similarity": 0.564,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Marketplace take rates commonly fall between **15 and 30 percent**, though they vary considerably. Payment-heavy marketplaces operate on just a few percent, while marketplaces that provide substantial trust, discovery, or logistics value can command more. [1]",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "How does churn differ between consumer and B2B subscriptions?",
+      "expected_document": "revenue_models",
+      "retrieved": [
+        "revenue_models",
+        "revenue_models",
+        "revenue_models",
+        "revenue_models",
+        "revenue_models"
+      ],
+      "top_similarity": 0.703,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, churn differs significantly between consumer and B2B subscriptions:\n\n- **Consumer (B2C)** subscriptions experience much higher churn, with **monthly churn of 5 to 10 percent** being common. [1]\n- **B2B SaaS** subscriptions have considerably lower churn, typically **1 to 2 percent monthly or lower**. [1]\n\nThis difference is attributed to the nature of the relationships: B2B customers generally require more effort to acquire but tend to stay longer, while consumer businesses face faster, often more emotionally-driven decisions that can lead to quicker cancellations. [1]",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What does net revenue retention above 100 percent mean?",
+      "expected_document": "revenue_models",
+      "retrieved": [
+        "revenue_models",
+        "revenue_models",
+        "fundraising_stages",
+        "revenue_models",
+        "revenue_models"
+      ],
+      "top_similarity": 0.499,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "According to the sources, **net revenue retention (NRR) above 100 percent** means that existing customers collectively spend more this year than last, after accounting for churn and downgrades. NRR above 120 percent is considered excellent and indicates strong expansion [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "How do consumer businesses win?",
+      "expected_document": "revenue_models",
+      "retrieved": [
+        "revenue_models",
+        "revenue_models",
+        "revenue_models",
+        "revenue_models",
+        "early_gtm"
+      ],
+      "top_similarity": 0.498,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "According to the sources, consumer businesses win through **distribution, virality, and brand** rather than through sales teams. [1]",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "How many customers should founders close before hiring a salesperson?",
+      "expected_document": "early_gtm",
+      "retrieved": [
+        "early_gtm",
+        "early_gtm",
+        "hiring_process",
+        "hiring_process",
+        "market_sizing"
+      ],
+      "top_similarity": 0.645,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "According to the sources, founders should personally close somewhere in the range of **the first 10 to 20 customers** before hiring a salesperson [1]. Hiring a salesperson too early \u2014 before there is a repeatable pitch and evidence that the product closes deals \u2014 is considered a common mistake, as the salesperson will have nothing to execute and will generally fail [2].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What is an ideal customer profile and how narrow should it be?",
+      "expected_document": "early_gtm",
+      "retrieved": [
+        "early_gtm",
+        "early_gtm",
+        "idea_validation",
+        "idea_validation",
+        "idea_validation"
+      ],
+      "top_similarity": 0.549,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "## Ideal Customer Profile (ICP)\n\nAn **ICP** is a specific description of the customer for whom your product is most obviously valuable. It typically specifies:\n\n- Company size\n- Industry\n- Role of the buyer\n- The trigger that creates urgency\n- What they currently use instead [2]\n\n## How Narrow Should It Be?\n\nIt should be **very narrow**. The most common early-stage mistake is defining the ICP too broadly \u2014 \"small and medium businesses\" is not an ICP. A properly narrow example would be something like: \"Dental practices with 2 to 5 locations that currently coordinate scheduling across offices by phone\" [2].\n\nA narrow ICP provides concrete benefits:\n- Makes messaging sharper\n- Makes referrals more likely\n- Makes outbound lists actually buildable [2]\n\nWhile narrowing feels like giving up market (which is why founders resist it), in practice a narrow initial segment is actually **the fastest route to a wider one**, because winning clearly for one group produces reference customers, case studies, and word of mouth [2].\n\nThis is also consistent with the broader validation approach of defining **one narrow customer segment** before conducting interviews and building [3].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "Should I charge design partners or give them the product free?",
+      "expected_document": "early_gtm",
+      "retrieved": [
+        "early_gtm",
+        "early_gtm",
+        "early_gtm",
+        "revenue_models",
+        "idea_validation"
+      ],
+      "top_similarity": 0.673,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, you should **charge design partners**, even if at a discount. [1] explicitly warns against making design partnerships free for two reasons:\n\n1. **A free partner has no accountability** \u2014 their feedback is unweighted by cost, making it less reliable.\n2. **Free arrangements remove skin from the game** \u2014 paying something, even a discounted amount, ensures the partner is genuinely invested.\n\nThis aligns with the broader pricing principle that **free products produce unreliable signals about value** [3], and that charging from the beginning is preferable to trying to convert free users to paid later [3].\n\nIn short: offer a discount as part of the design partnership arrangement, but always charge *something* [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "How long does content and SEO take to produce meaningful traffic?",
+      "expected_document": "early_gtm",
+      "retrieved": [
+        "early_gtm",
+        "early_gtm",
+        "idea_validation",
+        "revenue_models",
+        "idea_validation"
+      ],
+      "top_similarity": 0.475,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "According to the sources, content and SEO typically takes **6 to 12 months** before producing meaningful traffic [1][2].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What is a workable structure for early positioning?",
+      "expected_document": "early_gtm",
+      "retrieved": [
+        "early_gtm",
+        "early_gtm",
+        "idea_validation",
+        "hiring_process",
+        "hiring_process"
+      ],
+      "top_similarity": 0.563,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources provided, a workable structure for early positioning is [1][2]:\n\n**\"For [specific customer], who [has this problem], our product is a [category] that [key benefit], unlike [current alternative], because [differentiator].\"**\n\nA few additional points from the sources:\n\n- The **category** you claim matters significantly, as it determines what buyers compare you to and what they expect to pay. For example, positioning as a \"spreadsheet replacement\" invites a different price expectation than positioning as a \"compliance platform,\" even if the software is identical [1].\n- The **alternative** referenced in positioning is frequently not a competitor but rather the status quo \u2014 such as a spreadsheet, a manual process, or doing nothing [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "Should my first hires be generalists or specialists?",
+      "expected_document": "hiring_process",
+      "retrieved": [
+        "hiring_process",
+        "hiring_process",
+        "hiring_process",
+        "hiring_process",
+        "early_gtm"
+      ],
+      "top_similarity": 0.651,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, your first hires should be **generalists**.\n\nEarly-stage companies cannot precisely describe jobs, priorities shift frequently, and there is no established process to rely on. Specialists tend to thrive inside defined systems and often struggle without them [1][2].\n\nA practical way to identify good generalist candidates is to look for people who have worked outside their formal role \u2014 for example, an engineer who has talked to customers or a marketer who has built their own landing pages [1][2].\n\nSpecialists become the right hire only once a function is large enough to be a full-time job with predictable work \u2014 **typically when a generalist is already doing that work but doing it poorly due to lack of time** [2].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "How much equity should the first employee get?",
+      "expected_document": "hiring_process",
+      "retrieved": [
+        "hiring_process",
+        "cofounder_decisions",
+        "hiring_process",
+        "cofounder_decisions",
+        "fundraising_stages"
+      ],
+      "top_similarity": 0.638,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, the **first employee** at a seed-stage company (very early, pre-product-market-fit) should receive roughly **1 to 2 percent** equity [1][3].\n\nA few additional important points from the sources:\n\n- These grants typically follow the same **four-year vesting with a one-year cliff** structure used for founders [1].\n- Be transparent about what the equity represents \u2014 provide the number of shares, total shares outstanding, the strike price, and the most recent valuation, not just a percentage [1].\n- Equity figures **decrease as the company de-risks**; employees joining at later stages (e.g., Series B) receive less equity because they're taking on lower risk [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "When should I use a contractor instead of hiring an employee?",
+      "expected_document": "hiring_process",
+      "retrieved": [
+        "hiring_process",
+        "hiring_process",
+        "hiring_process",
+        "hiring_process",
+        "hiring_process"
+      ],
+      "top_similarity": 0.572,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources, here's when to use a contractor versus an employee:\n\n**Use a contractor when** the work is [1]:\n- Well-defined and bounded in scope\n- Specialized\n- **Not core** to the company's long-term differentiation\n- Examples include: design for a specific launch, legal review, bookkeeping, a one-off data migration, or a marketing campaign\n\nContractors cost more per hour but carry no long-term commitment, no equity, and minimal onboarding overhead [1].\n\n**Use an employee when** the work is [2]:\n- Ongoing and requires accumulating context\n- Touches the core of the product or business\n- Involves institutional knowledge that compounds \u2014 such as core engineering, customer relationships, or product decisions\n\n**Two important cautions** [2]:\n1. **Legal classification matters** \u2014 misclassifying someone who works full-time hours under your direction as a contractor creates real liability, and the rules vary by location.\n2. **Contract-to-hire trials can work well**, but they should be paid, time-boxed, and explicit about the possibility of conversion.",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "How long should a paid work trial be?",
+      "expected_document": "hiring_process",
+      "retrieved": [
+        "hiring_process",
+        "hiring_process",
+        "revenue_models",
+        "idea_validation",
+        "idea_validation"
+      ],
+      "top_similarity": 0.592,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "According to the sources, a paid work trial should be a small project commonly **4 to 8 hours** in length, and it should always be compensated at a fair rate. [2]",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "When is the right time to hire a manager?",
+      "expected_document": "hiring_process",
+      "retrieved": [
+        "hiring_process",
+        "hiring_process",
+        "hiring_process",
+        "hiring_process",
+        "early_gtm"
+      ],
+      "top_similarity": 0.542,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "Based on the sources provided, the right time to hire a manager is **when a team has grown to the point where coordination genuinely consumes someone's full attention** \u2014 commonly around **five to seven direct reports doing similar work** [2].\n\nBefore reaching that point, founders should manage directly [2]. Hiring managers too early is described as \"a common and expensive mistake,\" since a manager brought into a small company (e.g., five people) typically has no team, no budget, and no processes to run \u2014 and their core skills of coordinating and developing others have no application yet. Early manager hires also compress the growth path for early individual contributors [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "Why does an employee joining a Series B startup accept less equity?",
+      "expected_document": "hiring_process",
+      "retrieved": [
+        "hiring_process",
+        "fundraising_stages",
+        "cofounder_decisions",
+        "fundraising_stages",
+        "fundraising_stages"
+      ],
+      "top_similarity": 0.666,
+      "hit": true,
+      "rr": 1.0,
+      "answer": "According to the sources, an employee joining at Series B accepts less equity because their risk is lower and the shares are worth more [1]. This reflects the general principle that as a company progresses through funding rounds, it \"de-risks,\" meaning the uncertainty of failure decreases \u2014 and compensation in equity adjusts accordingly [1].",
+      "refused": false,
+      "refusal_correct": true,
+      "cited": true,
+      "fact_coverage": 1.0
+    },
+    {
+      "question": "What is the capital of Mongolia?",
+      "expected_document": null,
+      "retrieved": [
+        "market_sizing"
+      ],
+      "top_similarity": 0.153,
+      "answer": "The sources provided do not contain information about the capital of Mongolia. They only discuss market sizing concepts for investors.",
+      "refused": true,
+      "refusal_correct": true,
+      "cited": false
+    },
+    {
+      "question": "How do I optimize a PostgreSQL query plan?",
+      "expected_document": null,
+      "retrieved": [
+        "fundraising_stages",
+        "idea_validation",
+        "idea_validation",
+        "idea_validation",
+        "revenue_models"
+      ],
+      "top_similarity": 0.201,
+      "answer": "The sources provided do not contain any information about PostgreSQL, query plans, or database optimization. The context covers topics such as fundraising, idea validation, and revenue models. I cannot answer your question based on the available sources.",
+      "refused": true,
+      "refusal_correct": true,
+      "cited": false
+    },
+    {
+      "question": "How do I calculate my startup's runway and burn multiple?",
+      "expected_document": null,
+      "retrieved": [
+        "fundraising_stages",
+        "fundraising_stages",
+        "fundraising_stages",
+        "market_sizing",
+        "market_sizing"
+      ],
+      "top_similarity": 0.314,
+      "answer": "The sources provided do not contain information about calculating runway or burn multiple. These topics are not covered in the context given, which focuses on fundraising stages, market sizing, option pools, and growth benchmarks.\n\nTo get accurate guidance on runway and burn multiple calculations, I'd recommend consulting dedicated financial modeling or startup finance resources.",
+      "refused": true,
+      "refusal_correct": true,
+      "cited": false
+    },
+    {
+      "question": "What are the standard terms in a Series C term sheet?",
+      "expected_document": null,
+      "retrieved": [
+        "fundraising_stages",
+        "fundraising_stages",
+        "fundraising_stages",
+        "hiring_process",
+        "fundraising_stages"
+      ],
+      "top_similarity": 0.477,
+      "answer": "The sources provided do not contain information about Series C term sheets or their standard terms. The context covers seed and Series A fundraising stages [1][5], convertible instruments like SAFEs and convertible notes [2][3], and early employee equity grants [4], but does not address Series C rounds or the specific terms found in term sheets at that stage.",
+      "refused": true,
+      "refusal_correct": true,
+      "cited": true
+    },
+    {
+      "question": "Which states have the most favorable startup tax incentives?",
+      "expected_document": null,
+      "retrieved": [
+        "fundraising_stages",
+        "cofounder_decisions",
+        "cofounder_decisions",
+        "market_sizing",
+        "hiring_process"
+      ],
+      "top_similarity": 0.341,
+      "answer": "The provided sources do not contain information about state-level startup tax incentives. The sources cover topics such as fundraising stages [1], cofounder agreements and the 83(b) election [2][3], market sizing [4], and hiring processes [5], but none address state tax incentives for startups.\n\nI cannot answer this question based solely on the available sources.",
+      "refused": true,
+      "refusal_correct": true,
+      "cited": true
+    },
+    {
+      "question": "How should I structure an employee stock option plan for international contractors?",
+      "expected_document": null,
+      "retrieved": [
+        "fundraising_stages",
+        "cofounder_decisions",
+        "hiring_process",
+        "cofounder_decisions",
+        "cofounder_decisions"
+      ],
+      "top_similarity": 0.468,
+      "answer": "The sources provided do not contain enough information to answer this question. The context touches briefly on option pools \u2014 noting they typically represent **10\u201320% of the company** and discussing the timing of when they're created relative to investment closing [1] \u2014 but does not address structuring option plans for international contractors specifically.\n\nAdditionally, while contractors are mentioned [3], the discussion is limited to when to use contractors versus employees, with no mention of equity or options for contractors.\n\nFor guidance on structuring stock option plans for international contractors, you would need to consult additional specialized sources, such as legal counsel familiar with international tax and employment law.",
+      "refused": true,
+      "refusal_correct": true,
+      "cited": true
+    }
+  ]
+}

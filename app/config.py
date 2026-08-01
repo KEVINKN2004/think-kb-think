@@ -11,4 +11,9 @@ class Settings(BaseSettings):
     generation_model: str = "claude-sonnet-4-6"
     min_similarity_threshold: float = 0.3
 
+    admin_api_key: str = ""
+    rate_limit_ask: str = "10/minute"
+    rate_limit_search: str = "30/minute"
+    max_chunks_per_document: int = 200
+
 settings = Settings()
