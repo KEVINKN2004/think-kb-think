@@ -1,13 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
+from app.api.auth import require_api_key
+from app.config import settings
 from app.core.chunking import chunk_text
 from app.core.embeddings import EmbeddingProvider, get_provider
 from app.db.models import Chunk, Document
 from app.db.schemas import DocumentCreate, DocumentResponse, DocumentUpdate
 from app.db.session import get_db
-from app.api.auth import require_api_key
-from app.config import settings
 
 router = APIRouter(prefix = "/documents", tags = ["documents"])
 

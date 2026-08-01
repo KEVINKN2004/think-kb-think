@@ -1,5 +1,6 @@
 from app.core.retrieval import RetrievedChunk
 
+
 def hit_at_k(results: list[RetrievedChunk], expected_document: str) -> bool:
     return any(r.document_title == expected_document for r in results)
 

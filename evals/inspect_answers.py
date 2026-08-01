@@ -1,6 +1,7 @@
 import json
+from pathlib import Path
 
-data = json.load(open("evals/results/local.json"))
+data = json.loads(Path("evals/results/local.json").read_text(encoding = "utf-8"))
 for c in data["cases"]:
     if c["expected_document"] is None and not c.get("refused"):
         print(f"Q: {c['question']}")

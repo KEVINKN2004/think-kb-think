@@ -8,7 +8,13 @@ from app.core.generation import generate_answer
 from app.core.retrieval import retrieve
 from app.db.session import SessionLocal
 from evals.dataset import CASES
-from evals.metrics import (citations_present, fact_coverage, hit_at_k, looks_like_refusal, reciprocal_rank,)
+from evals.metrics import (
+    citations_present,
+    fact_coverage,
+    hit_at_k,
+    looks_like_refusal,
+    reciprocal_rank,
+)
 
 TOP_K = 5
 

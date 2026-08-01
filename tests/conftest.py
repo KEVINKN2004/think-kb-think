@@ -3,12 +3,12 @@ from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+from app.api.auth import require_api_key
 from app.config import settings
 from app.core.embeddings import MockEmbeddingProvider, get_provider
 from app.core.generation import get_llm
 from app.db.session import Base, get_db
 from app.main import app
-from app.api.auth import require_api_key
 
 TEST_DATABASE_URL = settings.database_url.replace("/kbdb", "/kbdb_test")
 

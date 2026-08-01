@@ -1,9 +1,14 @@
-from fastapi import APIRouter, Depends, Request, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from sqlalchemy.orm import Session
 
 from app.config import settings
 from app.core.embeddings import EmbeddingProvider, get_provider
-from app.core.generation import LLMClient, generate_answer, get_llm, GenerationUnavailable
+from app.core.generation import (
+    GenerationUnavailable,
+    LLMClient,
+    generate_answer,
+    get_llm,
+)
 from app.core.retrieval import retrieve
 from app.db.schemas import AskRequest, AskResponse, SearchResult
 from app.db.session import get_db

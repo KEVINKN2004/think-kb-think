@@ -1,6 +1,12 @@
 from app.core.retrieval import RetrievedChunk
-from evals.metrics import (citations_present, fact_coverage, hit_at_k, looks_like_refusal, reciprocal_rank,
+from evals.metrics import (
+    citations_present,
+    fact_coverage,
+    hit_at_k,
+    looks_like_refusal,
+    reciprocal_rank,
 )
+
 
 def _result(document_title: str, similarity: float = 0.7) -> RetrievedChunk:
     """Build a minimal RetrievedChunk for testing."""
