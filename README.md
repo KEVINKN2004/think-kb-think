@@ -1120,5 +1120,3 @@ think-kb-think/
 ## Acknowledgments
 
 Built by Kevin Khoa Nguyen. The collection of documents are of original writing. The project is MIT licensed.
-
-If you're reading this as part of evaluating me for a role — the parts I'd most want to talk about are the evaluation harness, the two-layer refusal defense, and the four debugging stories above. The final metrics are less interesting than what it took to trust them.
